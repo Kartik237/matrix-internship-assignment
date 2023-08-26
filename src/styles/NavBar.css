@@ -1,0 +1,129 @@
+.navbar {
+    grid-area: navbar;
+    grid-column: 1/3;
+    grid-row: 1;
+    display: flex;
+    padding: 1.75rem 2rem;
+    gap: 1.375rem;
+    flex-direction: column;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.nav-logo-wrapper {
+    display: flex;
+    gap: 0.75rem;
+    margin-right: auto;
+    grid-column: 1;
+}
+.nav-toggler {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+.navbar .logo-text {
+    font-size: 1rem;
+}
+.navbar-logo-container {
+    display: flex;
+    align-items: center;
+}
+.searchbar {
+    background: linear-gradient(
+        95.42deg,
+        rgba(124, 15, 53, 0.2) 4.79%,
+        rgba(88, 18, 102, 0.2) 100%
+    );
+    border-width: 1px;
+    border-style: solid;
+    border-color: hsl(var(--white));
+    border-radius: 20px;
+    display: flex;
+    flex-grow: 1;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+
+    grid-row: 2;
+    grid-column: 1/3;
+}
+.search-icon {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.searchbar:has(#search-input.active) {
+    display: none;
+}
+#search-input {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    color: hsl(var(--text-white));
+    font-size: 0.875rem;
+    font-family: "Poppins", sans-serif;
+}
+#search-input::placeholder {
+    font-weight: 600;
+    color: white;
+}
+#search-input:focus-visible {
+    outline: 1px solid transparent;
+    border-color: hsl(var(--accent));
+}
+.nav-button-container {
+    margin-left: auto;
+}
+button.connect {
+    background: linear-gradient(95.24deg, #7c0f35 7.59%, #581266 104.01%);
+    border: none;
+    border-radius: 20px;
+    color: hsl(var(--text-white));
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.575rem;
+    padding: 1rem 1.25rem;
+
+    grid-column: 2;
+}
+
+@media only screen and (min-width: 640px) {
+    .navbar {
+        grid-column: 2 !important;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+    }
+    .nav-logo-wrapper {
+        display: none;
+    }
+    .nav-button-container {
+        order: 2;
+    }
+    button.connect {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+    #search-input {
+        font-size: 1.125rem;
+    }
+    .searchbar {
+        padding: 12px 20px;
+        order: 1;
+        max-width: 435px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .navbar {
+        padding: 1.75rem 4rem;
+    }
+    button.connect {
+        padding: 0.875rem 2.75rem;
+    }
+}
